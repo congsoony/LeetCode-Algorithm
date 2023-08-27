@@ -1,0 +1,8 @@
+class Solution {
+public:
+int singleNumber(vector<int>& nums) {
+    int res=0;
+    for(int t:nums)res^=t;
+    return res;
+}
+};
