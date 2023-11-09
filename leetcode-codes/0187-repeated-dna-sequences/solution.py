@@ -1,5 +1,5 @@
-class Solution(object):
-    def findRepeatedDnaSequences(self, s):
+class Solution:
+    def findRepeatedDnaSequences(self, s: str) -> List[str]:
         m = {}
         res = []
         if len(s)<10 :
@@ -13,4 +13,3 @@ class Solution(object):
             if m[temp]==2:
                 res.append(temp)
         return res
-        
