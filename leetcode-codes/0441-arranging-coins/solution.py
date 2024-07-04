@@ -1,14 +1,16 @@
 class Solution(object):
     def arrangeCoins(self, n):
-        l,r = 0,1000000
-        res = 10000000
+        l = 1
+        r = 100000
+        res= 1
         while l<=r:
             mid = (l+r)//2
-            if n < self.summ(mid) :
-                res=min(res,mid)
+            if n<self.summ(mid):
                 r=mid-1
             else:
+                res=max(res,mid)
                 l=mid+1
-        return res-1
+        return res
+
     def summ(self,n):
-        return ((n)*(n+1))//2
+        return (n*(n+1))//2
