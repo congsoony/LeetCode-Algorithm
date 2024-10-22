@@ -1,9 +1,6 @@
-# Write your MySQL query statement below
-with temp as(
-select person_name ,weight, sum(weight) over(order by turn) as acc from queue
-order by turn
-)
+with temp as(select person_id, person_name, weight,sum(weight) over(order by turn) total,turn
+from queue
+order by total desc)
 select person_name from temp
-where acc<=1000
-order by acc desc
+where total<=1000
 limit 1
