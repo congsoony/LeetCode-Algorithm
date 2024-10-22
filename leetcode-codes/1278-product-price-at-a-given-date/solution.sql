@@ -1,4 +1,3 @@
-# Write your MySQL query statement below
 
 select product_id,first_value(new_price) over(partition by product_id order by change_date desc) price
 from products
