@@ -1,6 +1,4 @@
 # Write your MySQL query statement below
-select p.email from person p
-inner join person p2 
-on p.id != p2.id and p.email = p2.email
-group by p.email
-
+select p1.email email from person p1
+group by p1.email
+having count(p1.email)>1
