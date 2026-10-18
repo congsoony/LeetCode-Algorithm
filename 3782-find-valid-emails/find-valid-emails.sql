@@ -1,3 +1,3 @@
 select * from users
-where email regexp '^\\w+@[a-aA-Z]+\\.com$'
+where email regexp '^\\w+@[a-zA-Z]+\\.com$'
 order by user_id
