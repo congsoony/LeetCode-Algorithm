@@ -40,10 +40,9 @@ class Solution {
             }
         }
         if(group[cur]==parent){
-            counter++;
             while(true){
                 int t = st.removeLast();
-                p[t]=counter;
+                p[t]=parent;
                 if(t==cur)break;
             }
         }
