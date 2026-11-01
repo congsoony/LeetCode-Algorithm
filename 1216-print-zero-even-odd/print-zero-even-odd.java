@@ -1,6 +1,6 @@
 class ZeroEvenOdd {
     private int n;
-    private boolean flag =true;
+    private volatile boolean flag =true;
     Semaphore []s;
     public ZeroEvenOdd(int n) {
         this.n = n;
@@ -27,8 +27,8 @@ class ZeroEvenOdd {
         for(int i =2;i<=n;i+=2){
             s[2].acquire();
             printNumber.accept(i);
+            flag = !flag;
             s[0].release();
-            flag = true;
 
         }
     }
@@ -37,7 +37,7 @@ class ZeroEvenOdd {
         for(int i =1;i<=n;i+=2){
             s[1].acquire();
             printNumber.accept(i);
-            flag = false;
+            flag = !flag;
             s[0].release();
         }
     }
